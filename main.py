@@ -6,7 +6,6 @@ def title():
     print("4. Exit program\n")
 
 def read_gpa():
-    #file_name = input("Enter file name that has the current GPA record: ")
     try:
         with open("gpa_data.txt", 'r') as f:
             if f.read(1) == "":
@@ -23,7 +22,6 @@ def read_gpa():
                         gpa_data[list_dict[0]] = float(list_dict[1].strip())
                 return gpa_data
     except FileNotFoundError:
-        #print("File was not found, are you sure you typed its name correctly?")
         print("\nNo file exists for now, please calculate a GPA to make one.\n")
 
 def output_gpa():
