@@ -23,15 +23,14 @@ def read_gpa():
                 return gpa_data
     except FileNotFoundError:
         print("\nNo file exists for now, please calculate a GPA to make one.\n")
+        return False
 
 def output_gpa():
-    if read_gpa != False:
+    if read_gpa() != False:
         gpa_data = read_gpa()
         print(f"\nStudent name: {gpa_data["name"]}")
         print(f"Your current GPA is: {gpa_data["GPA"]}")
         print(f"Credit hours completed: {gpa_data["hours"]}\n")
-    else:
-        print("\nNo record exists for now.\n")
 
 def write_gpa(gpa_data):
     with open("gpa_data.txt", 'w') as f:
